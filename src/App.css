@@ -6,7 +6,7 @@ body{
   background-color:aquamarine;
 }
 .weather{
-  width: 300px;
+  width: 400px;
   padding: 30px;
   border-radius: 10px;
   margin: 50px auto;
@@ -54,4 +54,26 @@ margin-top: 5px;
   font-size: 40px;
   font-weight: 400;
   margin-top: -40px;
+}
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  margin-top: 50px;
+}
+.details .col{
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.details .col img{
+  width: 45px;
+  margin-right: 10px;
+}
+.humidity, .wind{
+font-size: 27px;
+}
+.humidity p, .wind p{
+  margin: 0px;
 }
