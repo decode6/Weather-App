@@ -55,7 +55,7 @@ const WeatherApp = () => {
               <div className="col">
                 <img src={wind} alt="wind" />
                 <div className="wind">
-                  <p>{Math(data.speed)}</p>
+                  <p>{Math.round(data.speed)}</p>
                   <p>Wind</p>
                 </div>
               </div>
