@@ -13,7 +13,7 @@ const WeatherApp = () => {
     humidity : 10,
     speed : 2
   })
-  const [name,setName] = useState();
+  const [name,setName] = useState("");
   useEffect (() => {
    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=london&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric";
     axios.get(apiUrl)
