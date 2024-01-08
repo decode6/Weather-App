@@ -14,9 +14,9 @@ const WeatherApp = () => {
     speed : 2
   })
   const [name,setName] = useState("");
-  useEffect (() => {
+  // useEffect (() => {
    
-  }, [])
+  // }, [])
 
   const handleClick = () =>{
     if(name!==""){
