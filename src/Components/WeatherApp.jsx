@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import "../App.css";
 import search_icon from "../assets/search_icon.png";
 import cloud from "../assets/cloud.png";
 import humidity from "../assets/humidity.png";
 import wind from "../assets/wind.png";
 const WeatherApp = () => {
+
+  const [data , setData] = useState({
+    celcius: 10,
+    name : "London",
+    humidity : 10,
+    speed : 2
+  })
+  useEffect (() => {
+   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=london&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric";
+    axios.get(apiUrl)
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+  }, [])
+
   return (
     <>
       <div className="container">
