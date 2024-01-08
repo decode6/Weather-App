@@ -20,7 +20,7 @@ const WeatherApp = () => {
 
   const handleClick = () =>{
     if(name!==""){
-      const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=london&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric";
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric`;
      axios.get(apiUrl)
      .then(res => {
       setData({...data, celcius: res.data.main.temp, name: res.data.name, 
