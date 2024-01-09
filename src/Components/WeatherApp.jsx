@@ -7,6 +7,8 @@ import humidity from "../assets/humidity.png";
 import wind from "../assets/wind.png";
 import clear from "../assets/clear.png";
 import rain from "../assets/rain.png";
+import snow from "../assets/snow.png";
+import drizzle from "../assets/drizzle.png";
 
 const WeatherApp = () => {
 
