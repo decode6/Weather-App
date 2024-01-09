@@ -6,6 +6,8 @@ import cloud from "../assets/cloud.png";
 import humidity from "../assets/humidity.png";
 import wind from "../assets/wind.png";
 import clear from "../assets/clear.png";
+import rain from "../assets/rain.png";
+
 const WeatherApp = () => {
 
   const [data , setData] = useState({
