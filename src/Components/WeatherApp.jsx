@@ -18,7 +18,7 @@ const WeatherApp = () => {
     name : "London",
     humidity : 10,
     speed : 2,
-    image: ""
+    image: {cloud}
   })
   const [name,setName] = useState("");
   // useEffect (() => {
@@ -32,22 +32,23 @@ const WeatherApp = () => {
      .then(res => {
       let imagePath = "";
       if(res.data.weather[0].main== "Clouds"){
-          imagePath = {cloud}
+          imagePath = '/assets/cloud.png'
       
       }else if(res.data.weather[0].main== "Clear"){
-        imagePath = {clear}
+        imagePath = "/assets/clear.png"
       }else if(res.data.weather[0].main== "Rain"){
-        imagePath = {rain}
+        imagePath = "/assets/cloud.png"
       }else if(res.data.weather[0].main== "Drizzle"){
-        imagePath = {drizzle}
-      }else if(res.data.weather[0].main== "Snow"){
-        imagePath = {snow}
+        imagePath = "/assets/cloud.png"
+      }else if(res.data.weather[0].main== "Mist"){
+        imagePath = "/assets/cloud.png"
       }else{
         imagePath = {cloud}
       }
 
       setData({...data, celcius: res.data.main.temp, name: res.data.name, 
-        humidity: res.data.main.humidity, speed: res.data.wind.speed})
+        humidity: res.data.main.humidity, speed: res.data.wind.speed,
+      image:imagePath})
      })
      .catch(err => console.error(err));
     }
@@ -64,7 +65,7 @@ const WeatherApp = () => {
             </button>
           </div>
           <div className="weather-info">
-            <img className="cloud-icon" src={cloud} alt="cloud" />
+            <img className="cloud-icon" src={data.image} alt="cloud" />
             <h1>{Math.round(data.celcius)}°c</h1>
             <h2>{data.name}</h2>
             <div className="details">
