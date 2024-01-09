@@ -30,7 +30,22 @@ const WeatherApp = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric`;
      axios.get(apiUrl)
      .then(res => {
-      let ImagePath = ""
+      let imagePath = "";
+      if(res.data.weather[0].main== "Clouds"){
+          imagePath = {cloud}
+      
+      }else if(res.data.weather[0].main== "Clear"){
+        imagePath = {clear}
+      }else if(res.data.weather[0].main== "Rain"){
+        imagePath = {rain}
+      }else if(res.data.weather[0].main== "Drizzle"){
+        imagePath = {drizzle}
+      }else if(res.data.weather[0].main== "Snow"){
+        imagePath = {snow}
+      }else{
+        imagePath = {cloud}
+      }
+
       setData({...data, celcius: res.data.main.temp, name: res.data.name, 
         humidity: res.data.main.humidity, speed: res.data.wind.speed})
      })
