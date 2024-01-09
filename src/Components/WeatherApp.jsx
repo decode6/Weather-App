@@ -5,13 +5,15 @@ import search_icon from "../assets/search_icon.png";
 import cloud from "../assets/cloud.png";
 import humidity from "../assets/humidity.png";
 import wind from "../assets/wind.png";
+import clear from "../assets/clear.png";
 const WeatherApp = () => {
 
   const [data , setData] = useState({
     celcius: 10,
     name : "London",
     humidity : 10,
-    speed : 2
+    speed : 2,
+    image: ""
   })
   const [name,setName] = useState("");
   // useEffect (() => {
@@ -23,6 +25,7 @@ const WeatherApp = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric`;
      axios.get(apiUrl)
      .then(res => {
+      let ImagePath = ""
       setData({...data, celcius: res.data.main.temp, name: res.data.name, 
         humidity: res.data.main.humidity, speed: res.data.wind.speed})
      })
