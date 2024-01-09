@@ -23,7 +23,7 @@ const WeatherApp = () => {
   const [name,setName] = useState("");
   // useEffect (() => {
    
-  // }, []) //api
+  // }, [])
 
   const handleClick = () =>{
     if(name!==""){
