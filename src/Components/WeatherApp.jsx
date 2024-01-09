@@ -10,6 +10,7 @@ import rain from "../assets/rain.png";
 import snow from "../assets/snow.png";
 import drizzle from "../assets/drizzle.png";
 
+
 const WeatherApp = () => {
 
   const [data , setData] = useState({
