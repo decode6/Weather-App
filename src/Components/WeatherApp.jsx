@@ -30,21 +30,21 @@ const WeatherApp = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=c562e8eb7ba07cb708d2d51aca38375a&units=metric`;
      axios.get(apiUrl)
      .then(res => {
-      let imagePath = "";
-      if(res.data.weather[0].main== "Clouds"){
-          imagePath = '/assets/cloud.png'
+      // let imagePath = "";
+      // if(res.data.weather[0].main== "Clouds"){
+      //     imagePath = '/assets/cloud.png'
       
-      }else if(res.data.weather[0].main== "Clear"){
-        imagePath = "/assets/clear.png"
-      }else if(res.data.weather[0].main== "Rain"){
-        imagePath = "/assets/cloud.png"
-      }else if(res.data.weather[0].main== "Drizzle"){
-        imagePath = "/assets/cloud.png"
-      }else if(res.data.weather[0].main== "Mist"){
-        imagePath = "/assets/cloud.png"
-      }else{
-        imagePath = {cloud}
-      }
+      // }else if(res.data.weather[0].main== "Clear"){
+      //   imagePath = "/assets/clear.png"
+      // }else if(res.data.weather[0].main== "Rain"){
+      //   imagePath = "/assets/cloud.png"
+      // }else if(res.data.weather[0].main== "Drizzle"){
+      //   imagePath = "/assets/cloud.png"
+      // }else if(res.data.weather[0].main== "Mist"){
+      //   imagePath = "/assets/cloud.png"
+      // }else{
+      //   imagePath = {cloud}
+      // }
 
       setData({...data, celcius: res.data.main.temp, name: res.data.name, 
         humidity: res.data.main.humidity, speed: res.data.wind.speed,
@@ -65,7 +65,7 @@ const WeatherApp = () => {
             </button>
           </div>
           <div className="weather-info">
-            <img className="cloud-icon" src={data.image} alt="cloud" />
+            <img className="cloud-icon" src={cloud} alt="cloud" />
             <h1>{Math.round(data.celcius)}°c</h1>
             <h2>{data.name}</h2>
             <div className="details">
